@@ -7,7 +7,7 @@
 
 Trailpack for viewing markdown documents.
 Set your doc directory folder and the trailpack automatically creates routes for the directory
-and renders the parsed markdown into your layout file. Perfect for a documentation webiste.
+and renders the parsed markdown into your layout file. Perfect for a documentation website.
 
 ## Install
 
