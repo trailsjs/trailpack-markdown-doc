@@ -1,0 +1,1 @@
+exports.MarkdowndocController = require('./MarkdowndocController')

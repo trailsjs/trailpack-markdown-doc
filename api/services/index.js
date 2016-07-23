@@ -1,0 +1,1 @@
+exports.MarkdowndocService = require('./MarkdowndocService')

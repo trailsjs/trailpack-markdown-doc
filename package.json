@@ -1,0 +1,45 @@
+{
+  "name": "trailpack-markdown-doc",
+  "version": "0.0.0",
+  "description": "Trailpack for creating markdown documents with markdown-doc-bundler",
+  "homepage": "http://trailsjs.io",
+  "author": {
+    "name": "Scott Wyatt",
+    "email": "scottwyatt86@gmail.com",
+    "url": "https://cali-style.com"
+  },
+  "main": "index.js",
+  "keywords": [
+    "Trails",
+    "Trailpack",
+    "Markdown",
+    "Documentation",
+    "trailpack",
+    "trails",
+    "trailjs"
+  ],
+  "dependencies": {
+    "markdown-doc-bundler": "0.0.12",
+    "trailpack": "latest"
+  },
+  "devDependencies": {
+    "lodash": "^4.11.1",
+    "trails": "latest",
+    "eslint": "^2.4",
+    "eslint-config-trails": "^1.0.4",
+    "mocha": "^2.4.5",
+    "smokesignals": "^1.0.9",
+    "trailpack-core": "^1.0.0-beta-6"
+  },
+  "scripts": {
+    "test": "eslint . && mocha"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "eslintConfig": {
+    "extends": "trails"
+  },
+  "repository": "scott-wyatt/trailpack-markdown-doc",
+  "license": "MIT"
+}
