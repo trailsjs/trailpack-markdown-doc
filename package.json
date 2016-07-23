@@ -20,19 +20,33 @@
   ],
   "dependencies": {
     "markdown-doc-bundler": "0.0.12",
-    "trailpack": "latest"
+    "marked": "^0.3.5",
+    "trailpack": "latest",
+    "trails-controller": "^1.0.0-beta-2",
+    "trails-model": "^1.0.0-beta-2",
+    "trails-policy": "^1.0.2",
+    "trails-service": "^1.0.0-beta-2"
   },
   "devDependencies": {
-    "lodash": "^4.11.1",
-    "trails": "latest",
+    "chai": "^3.5.0",
+    "chai-dom": "^1.4.0",
+    "ejs": "^2.4.2",
     "eslint": "^2.4",
     "eslint-config-trails": "^1.0.4",
+    "express": "^4.14.0",
+    "lodash": "^4.11.1",
     "mocha": "^2.4.5",
     "smokesignals": "^1.0.9",
-    "trailpack-core": "^1.0.0-beta-6"
+    "trailpack-core": "^1.0.0-beta-6",
+    "trailpack-express": "^1.0.6",
+    "trailpack-hapi": "^1.0.3",
+    "trailpack-router": "^1.0.7",
+    "trails": "latest"
   },
   "scripts": {
-    "test": "eslint . && mocha"
+    "test": "eslint . && npm run testExpress && npm run testHapi",
+    "testExpress": "export ENGINE=express;mocha",
+    "testHapi": "export ORM=hapi;mocha"
   },
   "engines": {
     "node": ">= 4.0.0"

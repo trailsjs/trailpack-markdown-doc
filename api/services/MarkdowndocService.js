@@ -8,5 +8,8 @@ const Service = require('trails-service')
  * @description Markdown Doc Bundler Service
  */
 module.exports = class MarkdowndocService extends Service {
-
+  constructor(app) {
+    super(app)
+    this.markdownDoc = require('markdown-doc-bundler')
+  }
 }
