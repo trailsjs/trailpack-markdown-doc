@@ -9,6 +9,12 @@ Trailpack for viewing markdown documents with markdown-doc-bundler
 
 ## Install
 
+With yeoman: 
+```sh
+$ yo trails:trailpack trailpack-markdown-doc
+```
+
+With NPM:
 ```sh
 $ npm install --save trailpack-markdown-doc
 ```
@@ -24,6 +30,21 @@ module.exports = {
   ]
 }
 ```
+
+```js
+// config/markdowndoc.js
+'use strict'
+
+module.exports = {
+  // Directory containing docs
+  path: '/docs',
+  // Prefix to be used for routes
+  prefix: 'docs',
+  // The layout page to embed the doc
+  layout: 'index.ejs'
+}
+```
+
 
 [npm-image]: https://img.shields.io/npm/v/trailpack-markdown-doc.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/trailpack-markdown-doc

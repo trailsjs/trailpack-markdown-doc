@@ -2,7 +2,8 @@
 'use strict'
 
 const Controller = require('trails-controller')
-const marked = require('marked')
+const Remarkable = require('remarkable')
+const md = new Remarkable()
 /**
  * @module MarkdowndocController
  * @description Markdown doc bundler Controller.
@@ -16,7 +17,7 @@ module.exports = class MarkdowndocController extends Controller{
    */
   doc(req, res) {
     const route = req.route
-    const page = marked(route.config.content)
+    const page = md.render(route.config.content)
     res.render(this.app.config.markdowndoc.layout, {content: page})
   }
 }

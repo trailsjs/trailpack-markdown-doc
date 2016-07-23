@@ -9,33 +9,36 @@ const packs = [
   require('trailpack-router'),
   require('../') // trailpack-stripe
 ]
-
-const web = {
-  express: require('express'),
-  middlewares: {
-    order: [
-      'addMethods',
-      'cookieParser',
-      'session',
-      'bodyParser',
-      'passportInit',
-      'passportSession',
-      'methodOverride',
-      'router',
-      'www',
-      '404',
-      '500'
-    ]
-  }
-}
-
 const ENGINE = process.env.ENGINE || 'express'
+
+let web
 
 if (ENGINE === 'hapi') {
   packs.push(require('trailpack-hapi'))
+  web = {
+    hapi: require('hapi')
+  }
 }
 else {
   packs.push(require('trailpack-express'))
+  web = {
+    express: require('express'),
+    middlewares: {
+      order: [
+        'addMethods',
+        'cookieParser',
+        'session',
+        'bodyParser',
+        'passportInit',
+        'passportSession',
+        'methodOverride',
+        'router',
+        'www',
+        '404',
+        '500'
+      ]
+    }
+  }
 }
 
 
