@@ -5,7 +5,9 @@
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Climate][codeclimate-image]][codeclimate-url]
 
-Trailpack for viewing markdown documents with markdown-doc-bundler
+Trailpack for viewing markdown documents.
+Set your doc directory folder and the trailpack automatically creates routes for the directory
+and renders the parsed markdown into your layout file. Perfect for a documentation webiste.
 
 ## Install
 
@@ -45,6 +47,21 @@ module.exports = {
 }
 ```
 
+```
+// views/index.ejs (or your view engine)
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="/">
+  <title>trailpack-markdown-doc</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <%- content %>
+</body>
+</html>
+```
 
 [npm-image]: https://img.shields.io/npm/v/trailpack-markdown-doc.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/trailpack-markdown-doc
