@@ -52,6 +52,6 @@ module.exports = {
 [ci-url]: https://travis-ci.org/scott-wyatt/trailpack-markdown-doc
 [daviddm-image]: http://img.shields.io/david/scott-wyatt/trailpack-markdown-doc.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/scott-wyatt/trailpack-markdown-doc
-[codeclimate-image]: https://img.shields.io/codeclimate/github//trailpack-markdown-doc.svg?style=flat-square
+[codeclimate-image]: https://img.shields.io/codeclimate/github/scott-wyatt/trailpack-markdown-doc.svg?style=flat-square
 [codeclimate-url]: https://codeclimate.com/github/scott-wyatt/trailpack-markdown-doc
 
