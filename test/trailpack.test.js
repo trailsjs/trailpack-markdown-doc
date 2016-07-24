@@ -11,13 +11,13 @@ describe('Trailpack', () => {
   it('should be loaded into the app.packs collection', () => {
     assert(pack)
   })
-  describe('#validate', () => {
-    it.skip('TODO test')
-  })
-  describe('#configure', () => {
-    it.skip('TODO test')
-  })
-  describe('#initialize', () => {
-    it.skip('TODO test')
-  })
+  // describe('#validate', () => {
+  //   it.skip('TODO test')
+  // })
+  // describe('#configure', () => {
+  //   it.skip('TODO should add routes')
+  // })
+  // describe('#initialize', () => {
+  //   it.skip('TODO test')
+  // })
 })

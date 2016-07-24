@@ -23,7 +23,7 @@ describe('MarkdowndocController', () => {
       .get('/docs/')
       .expect(200)
       .end((err, res) => {
-        // console.log(res.text)
+        console.log(res.text)
         // document.querySelector('#test-').to.have.text('TEST!')
         done(err)
       })
@@ -39,9 +39,19 @@ describe('MarkdowndocController', () => {
       })
   })
 
-  it('should get sub root text.md', (done) => {
+  it('should get sub root Subtest.md', (done) => {
     request
-      .get('/docs/test/test')
+      .get('/docs/test/subtest')
+      .expect(200)
+      .end((err, res) => {
+        // console.log(res.text)
+        // document.querySelector('#test-').to.have.text('TEST!')
+        done(err)
+      })
+  })
+  it('should get sub root subtest-2.md', (done) => {
+    request
+      .get('/docs/test/subtest-2')
       .expect(200)
       .end((err, res) => {
         // console.log(res.text)

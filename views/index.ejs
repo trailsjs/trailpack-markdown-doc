@@ -1,12 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <base href="/">
   <title>trailpack-markdown-doc</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <ul>
+  <% for(var i=0; i < sitemap.length; i++) { %>
+    <li>
+      <a href="<%= sitemap[i].route %>"><%= sitemap[i].title %></a>
+      <% if ( sitemap[i].routes.length > 0 ) { %>
+      <ul>
+        <% for(var r=0; r < sitemap[i].routes.length; r++) { %>
+        <li>
+          <a href="<%= sitemap[i].routes[r].route %>"><%= sitemap[i].routes[r].title %></a>
+          <% if ( sitemap[i].routes[r].routes.length > 0 ) { %>
+          <ul>
+            <% for(var rr=0; rr < sitemap[i].routes[r].routes.length; rr++) { %>
+            <li>
+              <a href="<%= sitemap[i].routes[r].routes[rr].route %>"><%= sitemap[i].routes[r].routes[rr].title %></a>
+            </li>
+            <% } %>
+          </ul>
+          <% } %>
+        </li>
+        <% } %>
+      </ul>
+      <% } %>
+   </li>
+  <% } %>
+  </ul>
   <%- content %>
 </body>
 </html>
