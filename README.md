@@ -58,7 +58,7 @@ module.exports = {
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <ul>
+  <ul>
   <% for(var i=0; i < sitemap.length; i++) { %>
     <li>
       <a href="<%= sitemap[i].route %>"><%= sitemap[i].title %></a>
