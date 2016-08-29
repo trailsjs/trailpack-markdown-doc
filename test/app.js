@@ -73,7 +73,12 @@ const App = {
         handler: 'DefaultController.info'
       },
       {
-        path: '/docs/override/test',
+        path: '/docs/override/',
+        method: ['GET'],
+        handler: 'MarkdowndocController.test'
+      },
+      {
+        path: '/docs/override/:id',
         method: ['GET'],
         handler: 'MarkdowndocController.test'
       }
