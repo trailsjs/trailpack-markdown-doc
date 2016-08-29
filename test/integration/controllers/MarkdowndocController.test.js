@@ -64,7 +64,7 @@ describe('MarkdowndocController', () => {
       .get('/docs/override/test')
       .expect(200)
       .end((err, res) => {
-        console.log(res.text)
+        // console.log(res.text)
         // document.querySelector('#test-').to.have.text('TEST!')
         done(err)
       })

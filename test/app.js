@@ -75,7 +75,7 @@ const App = {
       {
         path: '/docs/override/test',
         method: ['GET'],
-        handler: 'MarkdowndocController.doc'
+        handler: 'MarkdowndocController.test'
       }
     ],
     policies: {
