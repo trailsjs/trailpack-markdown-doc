@@ -66,11 +66,18 @@ const App = {
     main: {
       packs: packs
     },
-    routes: [{
-      path: '/',
-      method: ['GET'],
-      handler: 'DefaultController.info'
-    }],
+    routes: [
+      {
+        path: '/',
+        method: ['GET'],
+        handler: 'DefaultController.info'
+      },
+      {
+        path: '/docs/override/test',
+        method: ['GET'],
+        handler: 'MarkdowndocController.doc'
+      }
+    ],
     policies: {
 
     },

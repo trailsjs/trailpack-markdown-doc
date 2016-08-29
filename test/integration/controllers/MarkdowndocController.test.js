@@ -59,4 +59,14 @@ describe('MarkdowndocController', () => {
         done(err)
       })
   })
+  it('should get override/README.md content', (done) => {
+    request
+      .get('/docs/override/test')
+      .expect(200)
+      .end((err, res) => {
+        console.log(res.text)
+        // document.querySelector('#test-').to.have.text('TEST!')
+        done(err)
+      })
+  })
 })
