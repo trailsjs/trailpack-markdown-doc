@@ -17,7 +17,7 @@ module.exports = class MarkdowndocController extends Controller{
    */
   doc(req, res) {
     const route = req.route
-    const page = md.render(route.config.content)
+    const page = md.render(route.config.app.content)
     res.render(this.app.config.markdowndoc.layout, {content: page, sitemap: this.app.config.markdowndoc.sitemap})
   }
 
@@ -28,7 +28,7 @@ module.exports = class MarkdowndocController extends Controller{
    */
   test(req, res) {
     const route = req.route
-    const page = md.render(route.config.content)
+    const page = md.render(route.config.app.content)
     res.render(this.app.config.markdowndoc.layout, {content: page, sitemap: this.app.config.markdowndoc.sitemap})
   }
 }
