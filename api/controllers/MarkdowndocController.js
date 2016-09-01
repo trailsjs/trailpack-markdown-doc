@@ -2,8 +2,7 @@
 'use strict'
 
 const Controller = require('trails-controller')
-const Remarkable = require('remarkable')
-const md = new Remarkable()
+const MetaRemarkable = require('meta-remarkable')
 /**
  * @module MarkdowndocController
  * @description Markdown doc bundler Controller.
@@ -16,9 +15,15 @@ module.exports = class MarkdowndocController extends Controller{
    * @param {Object} res
    */
   doc(req, res) {
+    // Set Route
     const route = req.route
+
+    // Set Render
+    const md = new MetaRemarkable('full', this.app.config.markdowndoc.remarkable)
+
+    // Render Page
     const page = md.render(route.config.app.content)
-    res.render(this.app.config.markdowndoc.layout, {content: page, sitemap: this.app.config.markdowndoc.sitemap})
+    res.render(this.app.config.markdowndoc.layout, {content: page.html, meta: page.meta, sitemap: this.app.config.markdowndoc.sitemap})
   }
 
   /**
@@ -27,8 +32,14 @@ module.exports = class MarkdowndocController extends Controller{
    * @param {Object} res
    */
   test(req, res) {
+    // Set Route
     const route = req.route
+
+    // Set Render
+    const md = new MetaRemarkable('full', this.app.config.markdowndoc.remarkable)
+
+    // Render Page
     const page = md.render(route.config.app.content)
-    res.render(this.app.config.markdowndoc.layout, {content: page, sitemap: this.app.config.markdowndoc.sitemap})
+    res.render(this.app.config.markdowndoc.layout, {content: page.html, meta: page.meta, sitemap: this.app.config.markdowndoc.sitemap})
   }
 }

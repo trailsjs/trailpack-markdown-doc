@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "markdown-doc-bundler": "^0.0.13",
-    "remarkable": "^1.6.2",
+    "meta-remarkable": "^0.1.0",
     "trailpack": "latest",
     "trails-controller": "^1.0.0-beta-2",
     "trails-model": "^1.0.0-beta-2",

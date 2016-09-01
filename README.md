@@ -5,9 +5,9 @@
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Climate][codeclimate-image]][codeclimate-url]
 
-Trailpack for viewing markdown documents.
+Trailpack for viewing markdown documents as html with metadata.
 Set your doc directory folder and the trailpack automatically creates routes for the directory
-and renders the parsed markdown into your layout file. Perfect for a documentation website.
+and renders the parsed markdown into your layout file using [meta-remarkable](https://github.com/bmathews/meta-remarkable). Perfect for a documentation website.
 
 ## Install
 
@@ -46,6 +46,25 @@ module.exports = {
   layout: 'index.ejs'
 }
 ```
+
+### Markdown
+trailpack-markdown-doc supports YAML style Metadata in markdown documents (.md)
+
+```
+---
+Title:   My awesome markdown file
+Author:  Me
+Scripts:
+    - js/doStuff.js
+    - js/doMoreStuff.js
+---
+
+## Header
+Regular text and stuff goes here.
+```
+
+This way, a nice table is also created at the header of the page on sites like Github
+
 
 ```html
 // views/index.ejs (or your view engine)

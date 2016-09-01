@@ -6,5 +6,7 @@ module.exports = {
   // Prefix to be used for routes
   prefix: 'docs',
   // The layout page to embed the doc
-  layout: 'index.ejs'
+  layout: 'index.ejs',
+  // The Settings for Remarkable
+  remarkable: {}
 }
