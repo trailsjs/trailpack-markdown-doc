@@ -35,9 +35,11 @@ module.exports = {
       emit: []
     },
     initialize: {
-      listen: [],
+      listen: [
+        // Markdowndoc should wait til after routes have been fully configured before adding to them.
+        'trailpack:router:initialized'
+      ],
       emit: []
     }
   }
 }
-
