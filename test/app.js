@@ -7,7 +7,7 @@ const packs = [
   smokesignals.Trailpack,
   require('trailpack-core'),
   require('trailpack-router'),
-  require('../') // trailpack-stripe
+  require('../') // trailpack-markdown-doc
 ]
 const ENGINE = process.env.ENGINE || 'express'
 
@@ -71,17 +71,17 @@ const App = {
         path: '/',
         method: ['GET'],
         handler: 'DefaultController.info'
-      },
-      {
-        path: '/docs/override/',
-        method: ['GET'],
-        handler: 'MarkdowndocController.test'
-      },
-      {
-        path: '/docs/override/:id',
-        method: ['GET'],
-        handler: 'MarkdowndocController.test'
       }
+      // {
+      //   path: '/docs/override/',
+      //   method: ['GET'],
+      //   handler: 'MarkdowndocController.doc'
+      // },
+      // {
+      //   path: '/docs/override/:id',
+      //   method: ['GET'],
+      //   handler: 'MarkdowndocController.doc'
+      // }
     ],
     policies: {
 
@@ -94,5 +94,3 @@ const App = {
 }
 _.defaultsDeep(App, smokesignals.FailsafeConfig)
 module.exports = App
-
-

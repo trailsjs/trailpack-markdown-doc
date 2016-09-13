@@ -6,7 +6,7 @@ const supertest = require('supertest')
 // const chai = require('chai')
 // chai.use(require('chai-dom'))
 
-describe('MarkdowndocController', () => {
+describe('MarkdowndocController.doc', () => {
   let request
 
   before((done) => {
