@@ -1,6 +1,6 @@
 {
   "name": "trailpack-markdown-doc",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Trailpack for creating markdown documents with markdown-doc-bundler",
   "homepage": "http://trailsjs.io",
   "author": {
