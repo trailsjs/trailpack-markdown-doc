@@ -117,10 +117,10 @@ This way, a nice table is also created at the header of the page on sites like G
 
 [npm-image]: https://img.shields.io/npm/v/trailpack-markdown-doc.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/trailpack-markdown-doc
-[ci-image]: https://img.shields.io/travis/scott-wyatt/trailpack-markdown-doc/master.svg?style=flat-square
-[ci-url]: https://travis-ci.org/scott-wyatt/trailpack-markdown-doc
-[daviddm-image]: http://img.shields.io/david/scott-wyatt/trailpack-markdown-doc.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/scott-wyatt/trailpack-markdown-doc
-[codeclimate-image]: https://img.shields.io/codeclimate/github/scott-wyatt/trailpack-markdown-doc.svg?style=flat-square
-[codeclimate-url]: https://codeclimate.com/github/scott-wyatt/trailpack-markdown-doc
+[ci-image]: https://img.shields.io/travis/trailsjs/trailpack-markdown-doc/master.svg?style=flat-square
+[ci-url]: https://travis-ci.org/trailsjs/trailpack-markdown-doc
+[daviddm-image]: http://img.shields.io/david/trailsjs/trailpack-markdown-doc.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/trailsjs/trailpack-markdown-doc
+[codeclimate-image]: https://img.shields.io/codeclimate/github/trailsjs/trailpack-markdown-doc.svg?style=flat-square
+[codeclimate-url]: https://codeclimate.com/github/trailsjs/trailpack-markdown-doc
 
