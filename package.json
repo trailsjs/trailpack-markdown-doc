@@ -19,6 +19,7 @@
     "trailjs"
   ],
   "dependencies": {
+    "fuse.js": "^2.5.0",
     "markdown-doc-bundler": "^0.0.13",
     "meta-remarkable": "^0.1.0",
     "trailpack": "latest",

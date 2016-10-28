@@ -61,7 +61,18 @@ const App = {
     markdowndoc: {
       path: 'docs',
       prefix: 'docs',
-      layout: 'index.ejs'
+      layout: 'index.ejs',
+      search: {
+        // shouldSort: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        keys: [
+          'title',
+          'content'
+        ]
+      }
     },
     main: {
       packs: packs
@@ -71,6 +82,11 @@ const App = {
         path: '/',
         method: ['GET'],
         handler: 'DefaultController.info'
+      },
+      {
+        path: '/search/:query',
+        method: ['GET'],
+        handler: 'MarkdowndocController.search'
       }
       // {
       //   path: '/docs/override/',

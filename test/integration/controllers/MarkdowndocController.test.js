@@ -79,4 +79,14 @@ describe('MarkdowndocController.doc', () => {
         done(err)
       })
   })
+  // it('should get search results', (done) => {
+  //   request
+  //     .get('/search/test')
+  //     .expect(200)
+  //     .end((err, res) => {
+  //       console.log(res)
+  //       // document.querySelector('#test-').to.have.text('TEST!')
+  //       done(err)
+  //     })
+  // })
 })
