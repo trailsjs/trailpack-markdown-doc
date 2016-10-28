@@ -7,7 +7,13 @@
 
 Trailpack for viewing markdown documents as html with metadata.
 Set your doc directory folder and the trailpack automatically creates routes for the directory
-and renders the parsed markdown into your layout file using [meta-remarkable](https://github.com/bmathews/meta-remarkable). Perfect for a documentation website.
+and renders the parsed markdown into your layout file using [meta-remarkable](https://github.com/bmathews/meta-remarkable). Perfect for a documentation website or flat file CMS.
+
+## Cool Features
+ - Trailpack-markdown-doc will automatically blend with your existing routes.  For example, if you have a view controller for the route `/docs/hello/world` and you have an markdown file at `/docs/hello/world.md` then trailpack-markdown-doc will add the content and metadata to the route without altering the rest of your configuration. 
+ - This blending also does a "Fuzzy Lookup", so if you have a route that points to `/docs/hello/:world` and a markdown file at `/docs/hello/Readme.md` then it will apply the content and metadata to all routes that match that pattern.
+ - Trailpack-markdown-doc also resolves the children and siblings for each route in your markdown doc file stucture.
+ - Trailpack-markdown-doc also creates a js sitemap of all your markdown routes. 
 
 ## Install
 
@@ -63,16 +69,16 @@ Scripts:
 Regular text and stuff goes here.
 ```
 
-This way, a nice table is also created at the header of the page on sites like Github
+This way, a nice table is also created at the header of the page on sites like Github which makes this flatfile approach even more powerful.
 
+## Examples
 
 ```html
-// views/index.ejs (or your view engine)
+// views/index.ejs (or your view engine) using MarkdowndocController
 <!doctype html>
 <html lang="en">
 <head>
-  <base href="/">
-  <title>trailpack-markdown-doc</title>
+  <title><% if ( meta && meta.Title ) { %><%= meta.Title %><% } else { %>Opps, no Title<% } %></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -80,17 +86,17 @@ This way, a nice table is also created at the header of the page on sites like G
   <ul>
   <% for(var i=0; i < sitemap.length; i++) { %>
     <li>
-      <a href="<%= sitemap[i].route %>"><%= sitemap[i].title %></a>
-      <% if ( sitemap[i].routes.length > 0 ) { %>
+      <a href="<%= sitemap[i].path %>"><%= sitemap[i].title %></a>
+      <% if ( sitemap[i].children.length > 0 ) { %>
       <ul>
-        <% for(var r=0; r < sitemap[i].routes.length; r++) { %>
+        <% for(var r=0; r < sitemap[i].children.length; r++) { %>
         <li>
-          <a href="<%= sitemap[i].routes[r].route %>"><%= sitemap[i].routes[r].title %></a>
-          <% if ( sitemap[i].routes[r].routes.length > 0 ) { %>
+          <a href="<%= sitemap[i].children[r].path %>"><%= sitemap[i].children[r].title %></a>
+          <% if ( sitemap[i].children[r].children.length > 0 ) { %>
           <ul>
-            <% for(var rr=0; rr < sitemap[i].routes[r].routes.length; rr++) { %>
+            <% for(var rr=0; rr < sitemap[i].children[r].children.length; rr++) { %>
             <li>
-              <a href="<%= sitemap[i].routes[r].routes[rr].route %>"><%= sitemap[i].routes[r].routes[rr].title %></a>
+              <a href="<%= sitemap[i].children[r].children[rr].path %>"><%= sitemap[i].children[r].children[rr].title %></a>
             </li>
             <% } %>
           </ul>
@@ -102,7 +108,9 @@ This way, a nice table is also created at the header of the page on sites like G
    </li>
   <% } %>
   </ul>
+
   <%- content %>
+
 </body>
 </html>
 ```
