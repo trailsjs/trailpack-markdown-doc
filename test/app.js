@@ -4,8 +4,6 @@ const _ = require('lodash')
 const smokesignals = require('smokesignals')
 
 const packs = [
-  smokesignals.Trailpack,
-  require('trailpack-core'),
   require('trailpack-router'),
   require('../') // trailpack-markdown-doc
 ]
@@ -49,7 +47,7 @@ const App = {
   api: {
     models: { },
     controllers: {
-      DefaultController: class DefaultController extends require('trails-controller') {
+      DefaultController: class DefaultController extends require('trails/controller') {
         info(req, res){
           res.send('ok')
         }

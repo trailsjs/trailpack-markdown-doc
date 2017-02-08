@@ -1,6 +1,6 @@
 {
   "name": "trailpack-markdown-doc",
-  "version": "1.0.13",
+  "version": "2.0.0",
   "description": "Trailpack for creating markdown documents with markdown-doc-bundler",
   "homepage": "http://trailsjs.io",
   "author": {
@@ -22,28 +22,23 @@
     "fuse.js": "^2.5.0",
     "markdown-doc-bundler": "^0.0.13",
     "meta-remarkable": "^0.1.0",
-    "trailpack": "latest",
-    "trails-controller": "^1.0.0-beta-2",
-    "trails-model": "^1.0.0-beta-2",
-    "trails-policy": "^1.0.2",
-    "trails-service": "^1.0.0-beta-2"
+    "trailpack": "v2-latest"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-dom": "^1.4.0",
     "ejs": "^2.4.2",
-    "eslint": "^2.4",
-    "eslint-config-trails": "^1.0.4",
+    "eslint": "^3.0",
+    "eslint-config-trails": "^2.0.0",
     "express": "^4.14.0",
     "lodash": "^4.11.1",
     "mocha": "^2.4.5",
-    "smokesignals": "^1.0.9",
+    "smokesignals": "^2.1.0",
     "supertest": "^1.2.0",
-    "trailpack-core": "^1.0.0-beta-6",
-    "trailpack-express": "^1.0.6",
-    "trailpack-hapi": "^1.0.3",
-    "trailpack-router": "^1.0.7",
-    "trails": "latest"
+    "trailpack-express": "^2.0.2",
+    "trailpack-hapi": "^2.2.0",
+    "trailpack-router": "^2.1.0",
+    "trails": "^2.0.0"
   },
   "scripts": {
     "test": "eslint . && npm run testExpress && npm run testHapi",
