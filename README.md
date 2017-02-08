@@ -10,14 +10,15 @@ Set your doc directory folder and the trailpack automatically creates routes for
 and renders the parsed markdown into your layout file using [meta-remarkable](https://github.com/bmathews/meta-remarkable). Perfect for a documentation website or flat file CMS.
 
 ## Cool Features
- - Trailpack-markdown-doc will automatically blend with your existing routes.  For example, if you have a view controller for the route `/docs/hello/world` and you have an markdown file at `/docs/hello/world.md` then trailpack-markdown-doc will add the content and metadata to the route without altering the rest of your configuration. 
+ - Trailpack-markdown-doc will automatically blend with your existing routes.  For example, if you have a view controller for the route `/docs/hello/world` and you have an markdown file at `/docs/hello/world.md` then trailpack-markdown-doc will add the content and metadata to the route without altering the rest of your configuration.
  - This blending also does a "Fuzzy Lookup", so if you have a route that points to `/docs/hello/:world` and a markdown file at `/docs/hello/Readme.md` then it will apply the content and metadata to all routes that match that pattern.
  - Trailpack-markdown-doc also resolves the children and siblings for each route in your markdown doc file stucture.
- - Trailpack-markdown-doc also creates a js sitemap of all your markdown routes. 
+ - Trailpack-markdown-doc also creates a js sitemap of all your markdown routes.
+ - Trailpack-markdown-doc uses [Fuse.js](https://github.com/krisk/Fuse) for searching content and routes.
 
 ## Install
 
-With yeoman: 
+With yeoman:
 ```sh
 $ yo trails:trailpack trailpack-markdown-doc
 ```
@@ -45,11 +46,25 @@ module.exports = {
 
 module.exports = {
   // Directory containing docs
-  path: '/docs',
+  path: 'docs',
   // Prefix to be used for routes
   prefix: 'docs',
   // The layout page to embed the doc
-  layout: 'index.ejs'
+  layout: 'index.ejs',
+  // The Settings for Remarkable
+  remarkable: {},
+  // The Settings for Searching the Routes
+  search: {
+    shouldSort: true,
+    threshold: 0.6,
+    location: 0,
+    distance: 100,
+    maxPatternLength: 32,
+    keys: [
+      'title',
+      'content'
+    ]
+  }
 }
 ```
 
@@ -123,4 +138,3 @@ This way, a nice table is also created at the header of the page on sites like G
 [daviddm-url]: https://david-dm.org/trailsjs/trailpack-markdown-doc
 [codeclimate-image]: https://img.shields.io/codeclimate/github/trailsjs/trailpack-markdown-doc.svg?style=flat-square
 [codeclimate-url]: https://codeclimate.com/github/trailsjs/trailpack-markdown-doc
-

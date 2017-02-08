@@ -4,8 +4,6 @@ const _ = require('lodash')
 const smokesignals = require('smokesignals')
 
 const packs = [
-  smokesignals.Trailpack,
-  require('trailpack-core'),
   require('trailpack-router'),
   require('../') // trailpack-markdown-doc
 ]
@@ -49,7 +47,7 @@ const App = {
   api: {
     models: { },
     controllers: {
-      DefaultController: class DefaultController extends require('trails-controller') {
+      DefaultController: class DefaultController extends require('trails/controller') {
         info(req, res){
           res.send('ok')
         }
@@ -61,7 +59,18 @@ const App = {
     markdowndoc: {
       path: 'docs',
       prefix: 'docs',
-      layout: 'index.ejs'
+      layout: 'index.ejs',
+      search: {
+        // shouldSort: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        keys: [
+          'title',
+          'content'
+        ]
+      }
     },
     main: {
       packs: packs
@@ -71,6 +80,11 @@ const App = {
         path: '/',
         method: ['GET'],
         handler: 'DefaultController.info'
+      },
+      {
+        path: '/search/:query',
+        method: ['GET'],
+        handler: 'MarkdowndocController.search'
       }
       // {
       //   path: '/docs/override/',
